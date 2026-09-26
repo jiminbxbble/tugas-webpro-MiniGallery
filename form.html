@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Gallery - Tambah/Edit Memori</title>
+</head>
+<body>
+
+  <header>
+    <h1>Mini Gallery</h1>
+    <nav>
+      <a href="index.html">Beranda</a> |
+      <a href="form.html">Tambah Memori</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>Tambah / Edit Memori</h2>
+      <p>Isi form berikut untuk menyimpan memori berharga kamu.</p>
+
+      <form action="#" method="post">
+        <p>
+          <label for="judul">Judul Memori</label><br>
+          <input type="text" id="judul" name="judul" placeholder="Contoh: Liburan ke Pantai" required>
+        </p>
+
+        <p>
+          <label for="tanggal">Tanggal</label><br>
+          <input type="date" id="tanggal" name="tanggal" required>
+        </p>
+
+        <p>
+          <label for="kategori">Kategori</label><br>
+          <select id="kategori" name="kategori">
+            <option value="liburan">Liburan</option>
+            <option value="keluarga">Keluarga</option>
+            <option value="momen-spesial">Momen Spesial</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="file">Unggah Foto/Video</label><br>
+          <input type="file" id="file" name="file" accept="image/*,video/*">
+        </p>
+
+        <p>
+          <label for="deskripsi">Deskripsi</label><br>
+          <textarea id="deskripsi" name="deskripsi" rows="4" cols="40" placeholder="Ceritakan momen ini..."></textarea>
+        </p>
+
+        <p>
+          <button type="submit">Simpan Memori</button>
+          <a href="index.html">Batal</a>
+        </p>
+      </form>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mini Gallery. Dibuat untuk menyimpan memori berharga kamu.</p>
+  </footer>
+
+</body>
+</html>
