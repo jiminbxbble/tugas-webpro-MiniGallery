@@ -1,0 +1,1 @@
+Mini Gallery adalah website bertema hiburan yang memungkinkan pengguna menyimpan dan menikmati kembali memori berharga mereka dalam bentuk foto dan video singkat, layaknya galeri pribadi yang bisa diakses kapan saja.
