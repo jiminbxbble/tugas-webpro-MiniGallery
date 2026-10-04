@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mini Gallery - Detail Memori</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <h1>Mini Gallery</h1>
+    <div class="header-text">
+      <h1>Mini Gallery</h1>
+    </div>
     <nav>
-      <a href="index.html">Beranda</a> |
-      <a href="form.html">Tambah Memori</a>
+      <ul class="nav-list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="form.html">Tambah Memori</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -19,10 +24,12 @@
     <article>
       <h2>Liburan ke Pantai</h2>
 
-      <img src="images/memori1.jpg" alt="Foto liburan keluarga bermain di pantai saat matahari terbenam" width="400">
+      <div class="detail-image">
+        <img src="images/memori1.jpg" alt="Foto liburan keluarga bermain di pantai saat matahari terbenam" width="400">
+      </div>
 
       <p><strong>Tanggal:</strong> 12 Agustus 2026</p>
-      <p><strong>Kategori:</strong> Liburan</p>
+      <p><strong>Kategori:</strong> <span class="badge">Liburan</span></p>
       <p><strong>Deskripsi:</strong> Momen liburan bersama keluarga di pantai, menikmati matahari terbenam sambil bermain pasir. Salah satu kenangan paling berharga tahun ini.</p>
 
       <p>

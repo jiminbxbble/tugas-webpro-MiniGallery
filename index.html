@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mini Gallery - Daftar Memori</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <h1>Mini Gallery</h1>
-    <p>Simpan dan nikmati kembali memori berharga kamu</p>
+    <div class="header-text">
+      <h1>Mini Gallery</h1>
+      <p>Simpan dan nikmati kembali memori berharga kamu</p>
+    </div>
     <nav>
-      <a href="index.html">Beranda</a> |
-      <a href="form.html">Tambah Memori</a>
+      <ul class="nav-list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="form.html">Tambah Memori</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -33,31 +38,31 @@
         </thead>
         <tbody>
           <tr>
-            <td><img src="images/pantai.jpg" alt="Foto liburan keluarga di pantai" width="80"></td>
-            <td>Liburan ke Pantai</td>
-            <td>12 Agustus 2026</td>
-            <td>Liburan</td>
-            <td>
+            <td data-label="Thumbnail"><div class="thumbnail"><img src="images/pantai.jpg" alt="Foto liburan keluarga di pantai" width="80"></div></td>
+            <td data-label="Judul">Liburan ke Pantai</td>
+            <td data-label="Tanggal">12 Agustus 2026</td>
+            <td data-label="Kategori"><span class="badge">Liburan</span></td>
+            <td data-label="Aksi">
               <a href="detail.html">Lihat Detail</a> |
               <a href="form.html">Edit</a>
             </td>
           </tr>
           <tr>
-            <td><img src="images/pantai2.jpg" alt="Foto wisuda bersama teman kuliah" width="80"></td>
-            <td>Hari Wisuda</td>
-            <td>03 September 2026</td>
-            <td>Momen Spesial</td>
-            <td>
+            <td data-label="Thumbnail"><div class="thumbnail"><img src="images/pantai2.jpg" alt="Foto wisuda bersama teman kuliah" width="80"></div></td>
+            <td data-label="Judul">Hari Wisuda</td>
+            <td data-label="Tanggal">03 September 2026</td>
+            <td data-label="Kategori"><span class="badge">Momen Spesial</span></td>
+            <td data-label="Aksi">
               <a href="detail.html">Lihat Detail</a> |
               <a href="form.html">Edit</a>
             </td>
           </tr>
           <tr>
-            <td><img src="images/pantai3.jpg" alt="Video singkat pesta ulang tahun adik" width="80"></td>
-            <td>Ulang Tahun Adik</td>
-            <td>20 September 2026</td>
-            <td>Keluarga</td>
-            <td>
+            <td data-label="Thumbnail"><div class="thumbnail"><img src="images/pantai3.jpg" alt="Video singkat pesta ulang tahun adik" width="80"></div></td>
+            <td data-label="Judul">Ulang Tahun Adik</td>
+            <td data-label="Tanggal">20 September 2026</td>
+            <td data-label="Kategori"><span class="badge">Keluarga</span></td>
+            <td data-label="Aksi">
               <a href="detail.html">Lihat Detail</a> |
               <a href="form.html">Edit</a>
             </td>
