@@ -28,21 +28,10 @@
   </header>
 
   <main class="container py-4">
-    <article class="card shadow-sm">
-      <div class="row g-0">
-        <div class="col-12 col-md-6">
-          <img src="images/pantai.jpg" class="img-fluid w-100 h-100 rounded-start" style="object-fit: cover;" alt="Foto liburan keluarga di pantai">
-        </div>
-        <div class="col-12 col-md-6">
-          <div class="card-body p-4">
-            <h1 class="h4 text-teal fw-bold">Liburan ke Pantai</h1>
-            <p class="mb-1"><strong>Tanggal:</strong> 12 Agustus 2026</p>
-            <p class="mb-3"><strong>Kategori:</strong> <span class="badge badge-sand">Liburan</span></p>
-            <p>Momen liburan bersama keluarga di pantai, menikmati suasana sore dan deburan ombak. Salah satu kenangan paling berharga tahun ini.</p>
-            <a href="form.html" class="btn btn-teal">Edit Memori</a>
-            <a href="daftar.html" class="btn btn-outline-secondary">Kembali ke Daftar</a>
-          </div>
-        </div>
+    <!-- Isi kartu dirender oleh script.js sesuai ?id= di URL -->
+    <article class="card shadow-sm" id="detail-memori" aria-live="polite">
+      <div class="card-body p-4">
+        <p class="mb-0 text-muted">Memuat detail memori...</p>
       </div>
     </article>
   </main>
@@ -51,6 +40,9 @@
     <small>&copy; 2026 Mini Gallery. Dibuat untuk menyimpan memori berharga kamu.</small>
   </footer>
 
+  <!-- Urutan penting: jQuery dulu, baru script.js yang memakainya -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

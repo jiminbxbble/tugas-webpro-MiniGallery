@@ -34,63 +34,32 @@
         <p class="text-muted mb-0">Simpan dan nikmati kembali memori berharga kamu</p>
       </header>
 
-      <!-- Statistik: container > row > col -->
+      <!-- Statistik: angkanya dihitung & diisi oleh script.js -->
       <section class="row g-3 mb-4" aria-label="Ringkasan statistik">
         <div class="col-12 col-md-4">
           <div class="card text-center shadow-sm h-100"><div class="card-body">
-            <p class="display-6 fw-bold text-teal mb-0">24</p>
+            <p class="display-6 fw-bold text-teal mb-0" id="stat-foto">0</p>
             <p class="text-muted mb-0">Total Foto</p>
           </div></div>
         </div>
         <div class="col-12 col-md-4">
           <div class="card text-center shadow-sm h-100"><div class="card-body">
-            <p class="display-6 fw-bold text-teal mb-0">6</p>
+            <p class="display-6 fw-bold text-teal mb-0" id="stat-video">0</p>
             <p class="text-muted mb-0">Total Video Singkat</p>
           </div></div>
         </div>
         <div class="col-12 col-md-4">
           <div class="card text-center shadow-sm h-100"><div class="card-body">
-            <p class="display-6 fw-bold text-teal mb-0">4</p>
+            <p class="display-6 fw-bold text-teal mb-0" id="stat-kategori">0</p>
             <p class="text-muted mb-0">Kategori</p>
           </div></div>
         </div>
       </section>
 
-      <!-- Memori terbaru: 1 kolom (mobile), 2 (tablet), 3 (desktop) -->
+      <!-- Memori terbaru: kartunya dirender oleh script.js dari array data -->
       <section aria-label="Memori terbaru">
         <h2 class="h5 text-teal fw-bold mb-3">Memori Terbaru</h2>
-        <div class="row g-3">
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="images/pantai.jpg" class="card-img-top foto-card" alt="Foto liburan keluarga di pantai">
-              <div class="card-body">
-                <h3 class="h6 card-title">Liburan ke Pantai</h3>
-                <p class="card-text small text-muted">12 Agustus 2026 &middot; <span class="badge badge-sand">Liburan</span></p>
-                <a href="detail.html" class="btn btn-sm btn-teal">Lihat Detail</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="images/pantai2.jpg" class="card-img-top foto-card" alt="Foto wisuda bersama teman kuliah">
-              <div class="card-body">
-                <h3 class="h6 card-title">Hari Wisuda</h3>
-                <p class="card-text small text-muted">03 September 2026 &middot; <span class="badge badge-sand">Momen Spesial</span></p>
-                <a href="detail.html" class="btn btn-sm btn-teal">Lihat Detail</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-              <img src="images/pantai3.jpg" class="card-img-top foto-card" alt="Video singkat pesta ulang tahun adik">
-              <div class="card-body">
-                <h3 class="h6 card-title">Ulang Tahun Adik</h3>
-                <p class="card-text small text-muted">20 September 2026 &middot; <span class="badge badge-sand">Keluarga</span></p>
-                <a href="detail.html" class="btn btn-sm btn-teal">Lihat Detail</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="row g-3" id="daftar-kartu"></div>
       </section>
     </article>
   </main>
@@ -99,6 +68,9 @@
     <small>&copy; 2026 Mini Gallery. Dibuat untuk menyimpan memori berharga kamu.</small>
   </footer>
 
+  <!-- Urutan penting: jQuery dulu, baru script.js yang memakainya -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

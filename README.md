@@ -17,10 +17,54 @@ Bootstrap dipilih karena Mini Gallery banyak memakai komponen UI standar (navbar
 | `form.html` | Halaman form tambah/edit memori |
 | `detail.html` | Halaman detail satu memori |
 | `style.css` | Custom warna tema di atas Bootstrap |
+| `script.js` | Interaktivitas: JavaScript murni + jQuery (Tugas 5) |
 
 Navigasi memakai navbar Bootstrap yang responsif (berubah menjadi tombol hamburger di layar kecil).
 
-## Screenshot Tiap Tahapan
+---
+
+## Tugas 5 - JavaScript dan jQuery
+
+Tidak ada halaman baru. Halaman yang sudah ada diberi `script.js` dan library jQuery (CDN). Tabel, kartu, statistik, dan detail kini **dirender dari data array**, bukan ditulis manual di HTML.
+
+### JavaScript murni (`script.js`, bagian 1)
+| Materi | Penerapan di Mini Gallery |
+|--------|---------------------------|
+| Variabel & tipe data | `dataAwal` / `memories`: array of object berisi `id, judul, tanggal, kategori, jenis, gambar, alt, deskripsi` |
+| Function pemroses data | `hitungStatistik()` (hitung foto, video, kategori), `filterByKategori()`, `urutkanTerbaru()`, `buatIdBaru()`, `formatTanggal()` |
+| Percabangan | `if/else` untuk jenis Video/Foto, data kosong, dan memori tidak ditemukan |
+| Perulangan | `for...of` untuk merender baris tabel dan kartu memori dari array |
+
+### jQuery (`script.js`, bagian 2)
+| Materi | Penerapan di Mini Gallery |
+|--------|---------------------------|
+| Efek `slideToggle` | Tombol **+ Tambah Memori** menampilkan/menyembunyikan form tambah cepat; tombol **Sembunyikan Deskripsi** di halaman detail |
+| Efek `fadeIn` / `fadeOut` | Kartu muncul pelan saat dashboard dibuka, baris baru muncul saat ditambah, baris menghilang saat dihapus, notifikasi muncul lalu hilang sendiri |
+| `on('click')` | Hapus memori dari tabel, buka/tutup form, reset data |
+| `on('change')` | Filter tabel berdasarkan kategori |
+| `on('submit')` + validasi | Field kosong (judul, tanggal, kategori, deskripsi) ditandai merah dan data **tidak dikirim** sampai semua terisi |
+
+Data tambahan: perubahan data (tambah/hapus) disimpan di `localStorage` supaya tetap ada saat pindah halaman. Tombol **Reset Data** mengembalikan ke data dummy awal.
+
+### Cara mencoba
+1. **Dashboard** (`index.html`): angka statistik dan kartu "Memori Terbaru" dihitung dari array.
+2. **Daftar** (`daftar.html`): klik **+ Tambah Memori** (form muncul), kosongkan lalu **Simpan** (muncul error), isi lengkap lalu **Simpan** (baris baru muncul), klik **Hapus** (baris hilang), ganti filter **Kategori**.
+3. **Form** (`form.html`): coba kirim dalam keadaan kosong, lalu isi lengkap.
+4. **Detail** (`detail.html`): klik **Lihat Detail** pada salah satu memori, lalu klik **Sembunyikan Deskripsi**.
+
+### Screenshot Sebelum dan Sesudah Interaksi
+| Interaksi | Sebelum | Sesudah |
+|-----------|---------|---------|
+| Tampilkan form tambah (`slideToggle`) | ![](screenshot%20hasil/js-1-form-sebelum.png) | ![](screenshot%20hasil/js-1-form-sesudah.png) |
+| Tambah & hapus data (`click`, `fadeIn/fadeOut`) | ![](screenshot%20hasil/js-2-tabel-sebelum.png) | ![](screenshot%20hasil/js-2-tabel-sesudah-tambah.png) ![](screenshot%20hasil/js-2-tabel-sesudah-hapus.png) |
+| Validasi form kosong (`submit`) | ![](screenshot%20hasil/js-3-validasi-sebelum.png) | ![](screenshot%20hasil/js-3-validasi-sesudah.png) |
+
+### Video Demo Interaktivitas
+Link video: (tempel link video di sini)
+
+---
+
+## Screenshot Tahapan Sebelumnya
 
 ### Tahap 1 - HTML
 ![Hasil HTML](screenshot%20hasil/hasil-screenshot-html.png)
@@ -40,4 +84,4 @@ Navigasi memakai navbar Bootstrap yang responsif (berubah menjadi tombol hamburg
 
 ## Cara Menjalankan
 1. Clone repository ini.
-2. Buka `index.html` di browser (butuh koneksi internet karena Bootstrap dimuat lewat CDN).
+2. Buka `index.html` di browser (butuh koneksi internet karena Bootstrap dan jQuery dimuat lewat CDN).

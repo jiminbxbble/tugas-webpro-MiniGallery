@@ -35,40 +35,57 @@
             <h1 class="h4 text-teal fw-bold">Tambah / Edit Memori</h1>
             <p class="text-muted">Isi form berikut untuk menyimpan memori berharga kamu.</p>
 
-            <form action="#" method="post" class="row g-3">
+            <!-- Notifikasi (disembunyikan, dimunculkan oleh jQuery) -->
+            <div id="notifikasi" class="alert" role="alert" style="display: none;"></div>
+
+            <form id="form-memori" action="#" method="post" class="form-validasi row g-3" novalidate>
               <div class="col-12 col-md-6">
                 <label for="judul" class="form-label fw-semibold text-teal">Judul Memori</label>
-                <input type="text" class="form-control" id="judul" name="judul" placeholder="Contoh: Liburan ke Pantai" required>
+                <input type="text" class="form-control" id="judul" name="judul" placeholder="Contoh: Liburan ke Pantai" required data-wajib>
+                <div class="invalid-feedback">Judul tidak boleh kosong.</div>
               </div>
 
               <div class="col-12 col-md-6">
                 <label for="tanggal" class="form-label fw-semibold text-teal">Tanggal</label>
-                <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                <input type="date" class="form-control" id="tanggal" name="tanggal" required data-wajib>
+                <div class="invalid-feedback">Tanggal harus diisi.</div>
               </div>
 
               <div class="col-12 col-md-6">
                 <label for="kategori" class="form-label fw-semibold text-teal">Kategori</label>
-                <select class="form-select" id="kategori" name="kategori">
-                  <option value="liburan">Liburan</option>
-                  <option value="keluarga">Keluarga</option>
-                  <option value="momen-spesial">Momen Spesial</option>
-                  <option value="lainnya">Lainnya</option>
+                <select class="form-select" id="kategori" name="kategori" required data-wajib>
+                  <option value="">-- Pilih kategori --</option>
+                  <option value="Liburan">Liburan</option>
+                  <option value="Keluarga">Keluarga</option>
+                  <option value="Momen Spesial">Momen Spesial</option>
+                  <option value="Lainnya">Lainnya</option>
                 </select>
+                <div class="invalid-feedback">Pilih salah satu kategori.</div>
               </div>
 
               <div class="col-12 col-md-6">
-                <label for="file" class="form-label fw-semibold text-teal">Unggah Foto/Video</label>
-                <input type="file" class="form-control" id="file" name="file" accept="image/*,video/*">
+                <label for="jenis" class="form-label fw-semibold text-teal">Jenis</label>
+                <select class="form-select" id="jenis" name="jenis">
+                  <option value="Foto">Foto</option>
+                  <option value="Video">Video</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label for="file" class="form-label fw-semibold text-teal">Unggah Foto/Video (opsional)</label>
+                <input type="file" class="form-control" id="file" name="file" accept="image/*,video/*" aria-describedby="bantuan-file">
+                <div id="bantuan-file" class="form-text">Belum terhubung ke server, jadi sementara memakai gambar contoh.</div>
               </div>
 
               <div class="col-12">
                 <label for="deskripsi" class="form-label fw-semibold text-teal">Deskripsi</label>
-                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" placeholder="Ceritakan momen ini..."></textarea>
+                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" placeholder="Ceritakan momen ini..." required data-wajib></textarea>
+                <div class="invalid-feedback">Deskripsi tidak boleh kosong.</div>
               </div>
 
               <div class="col-12 d-flex gap-2">
                 <button type="submit" class="btn btn-teal">Simpan Memori</button>
-                <a href="daftar.html" class="btn btn-outline-secondary">Batal</a>
+                <a href="daftar.html" class="btn btn-outline-secondary">Lihat Daftar</a>
               </div>
             </form>
           </div>
@@ -81,6 +98,9 @@
     <small>&copy; 2026 Mini Gallery. Dibuat untuk menyimpan memori berharga kamu.</small>
   </footer>
 
+  <!-- Urutan penting: jQuery dulu, baru script.js yang memakainya -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

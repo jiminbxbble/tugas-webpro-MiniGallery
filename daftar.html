@@ -34,8 +34,70 @@
           <h1 class="h3 text-teal fw-bold mb-0">Daftar Memori</h1>
           <p class="text-muted mb-0">Berikut adalah kumpulan foto dan video singkat yang sudah kamu simpan.</p>
         </div>
-        <a href="form.html" class="btn btn-teal">+ Tambah Memori</a>
+        <button type="button" id="btn-toggle-form" class="btn btn-teal" aria-expanded="false" aria-controls="panel-tambah">+ Tambah Memori</button>
       </header>
+
+      <!-- Notifikasi (disembunyikan, dimunculkan oleh jQuery) -->
+      <div id="notifikasi" class="alert" role="alert" style="display: none;"></div>
+
+      <!-- Form tambah cepat (disembunyikan, dibuka dengan slideToggle) -->
+      <section id="panel-tambah" class="card shadow-sm mb-3" style="display: none;" aria-label="Form tambah memori cepat">
+        <div class="card-body">
+          <h2 class="h5 text-teal fw-bold mb-3">Tambah Memori Cepat</h2>
+          <form id="form-cepat" class="form-validasi row g-3" novalidate>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="cepat-judul" class="form-label fw-semibold text-teal">Judul</label>
+              <input type="text" class="form-control" id="cepat-judul" name="judul" placeholder="Contoh: Makan Malam Keluarga" required data-wajib>
+              <div class="invalid-feedback">Judul tidak boleh kosong.</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="cepat-tanggal" class="form-label fw-semibold text-teal">Tanggal</label>
+              <input type="date" class="form-control" id="cepat-tanggal" name="tanggal" required data-wajib>
+              <div class="invalid-feedback">Tanggal harus diisi.</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="cepat-kategori" class="form-label fw-semibold text-teal">Kategori</label>
+              <select class="form-select" id="cepat-kategori" name="kategori" required data-wajib>
+                <option value="">-- Pilih kategori --</option>
+                <option value="Liburan">Liburan</option>
+                <option value="Keluarga">Keluarga</option>
+                <option value="Momen Spesial">Momen Spesial</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+              <div class="invalid-feedback">Pilih salah satu kategori.</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="cepat-jenis" class="form-label fw-semibold text-teal">Jenis</label>
+              <select class="form-select" id="cepat-jenis" name="jenis">
+                <option value="Foto">Foto</option>
+                <option value="Video">Video</option>
+              </select>
+            </div>
+            <div class="col-12 d-flex flex-wrap align-items-center gap-2">
+              <button type="submit" class="btn btn-teal">Simpan</button>
+              <span class="small text-muted">Butuh isian lengkap? <a href="form.html">Buka halaman form</a></span>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Filter & jumlah data -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+        <div class="d-flex align-items-center gap-2">
+          <label for="filter-kategori" class="fw-semibold text-teal mb-0">Kategori:</label>
+          <select id="filter-kategori" class="form-select form-select-sm w-auto">
+            <option value="semua">Semua</option>
+            <option value="Liburan">Liburan</option>
+            <option value="Keluarga">Keluarga</option>
+            <option value="Momen Spesial">Momen Spesial</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <span class="small text-muted">Total: <strong id="jumlah-memori">0</strong> memori</span>
+          <button type="button" id="btn-reset" class="btn btn-sm btn-outline-secondary">Reset Data</button>
+        </div>
+      </div>
 
       <div class="table-responsive bg-white rounded shadow-sm">
         <table class="table table-striped table-hover align-middle text-center mb-0">
@@ -48,38 +110,8 @@
               <th scope="col">Aksi</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><img src="images/pantai.jpg" class="rounded foto-thumb" alt="Foto liburan keluarga di pantai"></td>
-              <td>Liburan ke Pantai</td>
-              <td>12 Agustus 2026</td>
-              <td><span class="badge badge-sand">Liburan</span></td>
-              <td>
-                <a href="detail.html" class="btn btn-sm btn-outline-teal">Lihat Detail</a>
-                <a href="form.html" class="btn btn-sm btn-outline-secondary">Edit</a>
-              </td>
-            </tr>
-            <tr>
-              <td><img src="images/pantai2.jpg" class="rounded foto-thumb" alt="Foto wisuda bersama teman kuliah"></td>
-              <td>Hari Wisuda</td>
-              <td>03 September 2026</td>
-              <td><span class="badge badge-sand">Momen Spesial</span></td>
-              <td>
-                <a href="detail.html" class="btn btn-sm btn-outline-teal">Lihat Detail</a>
-                <a href="form.html" class="btn btn-sm btn-outline-secondary">Edit</a>
-              </td>
-            </tr>
-            <tr>
-              <td><img src="images/pantai3.jpg" class="rounded foto-thumb" alt="Video singkat pesta ulang tahun adik"></td>
-              <td>Ulang Tahun Adik</td>
-              <td>20 September 2026</td>
-              <td><span class="badge badge-sand">Keluarga</span></td>
-              <td>
-                <a href="detail.html" class="btn btn-sm btn-outline-teal">Lihat Detail</a>
-                <a href="form.html" class="btn btn-sm btn-outline-secondary">Edit</a>
-              </td>
-            </tr>
-          </tbody>
+          <!-- Baris tabel dirender oleh script.js dari array data -->
+          <tbody id="tabel-body"></tbody>
         </table>
       </div>
     </article>
@@ -89,6 +121,9 @@
     <small>&copy; 2026 Mini Gallery. Dibuat untuk menyimpan memori berharga kamu.</small>
   </footer>
 
+  <!-- Urutan penting: jQuery dulu, baru script.js yang memakainya -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
